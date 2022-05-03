@@ -1,0 +1,17 @@
+  body{background: url(https://api.sunweihu.com/api/sjbz/api.php?method=mobile&lx=meizi);background-size: contain;}
+  a:link {text-decoration: none;}
+
+  .catalogue{font-size:3vw;font-family:arial;width:100%;}
+/*¶¥²¿*/
+  .catalogue1{font-size:3.5vw;margin-top: 15px;margin-bottom: 15px;text-align: center;}
+/*µ¼º½À¸*/
+  .catalogue2 {float:left;width:100%;margin: 10px 0;}
+  .catalogue2 a{float:left;color: #000000;width:20%;height: 22px;border: 1px solid #f2b1b1;border-radius: 5px; margin:4px;padding: 3px;text-align: center;text-decoration: none;}
+/*ÁÐ±í*/
+  .catalogue3 {float:left;border: 2px solid #d9edf7;border-radius: 5px; width: 100%; height:auto;margin: 10px 0;}
+  .catalogue3 a{float:left;text-align:left;width:48%;height:auto;margin-left:4px;}
+  /*.catalogue3 img{height:300px}*/
+  .catalogue3 a>p{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color: #ff0000;margin: 2px auto;font-size: x-small;}
+ 
+/*Î²²¿*/
+  .catalogue4{float:left;font-size:2vw;text-align: center;font-family:arial;width:100%;}
