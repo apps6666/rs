@@ -30,7 +30,7 @@ function dateFormat(fmt, date) { let ret;const opt = { "Y+": date.getFullYear().
     for (let k in opt) {  ret = new RegExp("(" + k + ")").exec(fmt);   if (ret) {    fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))   };   };  return fmt;}
 var time=dateFormat("YYYYmmdd", new Date());
 console.log(time)
-document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"+time+"/videolist_"+time+"_08_2_-_-_100_1.json";  //原网站：https://akr78w9j5s.com
+document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"+time+"/videolist_"+time+"_16_2_-_-_100_1.json";  //原网站：https://akr78w9j5s.com
 </script>
 	<div class="catalogue2"></div>
 	<div class="catalogue3"  id="demo"></div>
@@ -43,7 +43,7 @@ document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"
 		console.log(obj);
 		var txt='';
 		for(var i=0;i<obj.length;i++){
-		txt=txt+'<button class="menu" onclick="clicked('+obj[i].id+')">'+obj[i].id+':&nbsp;&nbsp;'+obj[i].name+ '</button>';
+			txt=txt+'<button class="menu" onclick="clicked('+obj[i].id+')">'+obj[i].id+':&nbsp;&nbsp;'+obj[i].name+ '&nbsp;-&nbsp;'+obj[i].total+ '</button>';
 		//console.log(txt)
 		}
 		document.getElementById('demo').innerHTML=txt;
