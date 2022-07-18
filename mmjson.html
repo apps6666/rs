@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>星空影视</title>
+	<base target="_blank" />
+	<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+	body{overflow-y:scroll;background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F23%2F92%2FkSL8loAeSq.jpg&amp;refer=http%3A%2F%2Fpic.616pic.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1650002525&amp;t=3cb3e3ff12943d76c5c156e399bed652) fixed no-repeat;background-size: 100% 100%;}
+	.catalogue3{width: 100%;float: left;}
+	.menu{float: left;text-align: left;background: linear-gradient(to bottom,#F2EAD4,#A68B20);font-weight: bold;padding: 5px 5px;margin: 5px 5px;border-radius: 10px;width: 46%;height: 30px;}
+	.links{float: left;text-decoration: aqua;text-overflow: ellipsis;overflow: hidden;white-space:nowrap;height: 25px;background: linear-gradient(to bottom,#F4F4E4,#E1CD96);color: black;font-weight: bold;padding-top: 10px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;margin: 5px -5px;border-radius: 10px;font-size: 12px;width: 100%;}
+	.catalogue4{float: left;font-size:2vw;text-align: center;font-family:arial;width:100%;}
+	</style>
+</head>
+<body onload="hqchannel()">
+	<div class="catalogue3"  id="demo"></div>
+<script>
+	function hqchannel() {
+		var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+			httpRequest.open('GET','./js/m3u.json' , true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+			httpRequest.send();//第三步：发送请求  将请求参数写在URL中
+			/**
+			 * 获取数据后的处理程序
+			 */
+			httpRequest.onreadystatechange = function () {
+				if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+					var channel = httpRequest.responseText;//获取到json字符串，还需解析
+				   // console.log(json);
+
+		//调用 r = e.res; 上3行的catch((function (t)
+		console.log(channel)
+		var zfc = JSON.stringify(channel.RECORDS, [ 'id', 'z2', 'z3'])
+		var obj = JSON.parse(zfc)
+		//console.log(obj);
+		obj.forEach((val,index)=>{
+			val["z3"]='http://www.wbdy.tv/js/player/?url='+val["z3"];// 修改 把video_url修改
+			//val["LimitAccount"]=188.0;//增加
+			// delete val["CustName"];// 删除
+		})
+		//console.log(obj);// 输出对象
+
+		var txt='';
+		for(var i=0;i<obj.length;i++){
+			txt=txt+'<a class="links" href="'+obj[i].z3+'">'+(i+1)+":"+obj[i].z2+ '</a>';
+		//console.log(txt)
+		}
+		document.getElementById('demo').innerHTML=txt;
+	}
+	}}
+	</script>
+	<div class="catalogue4" style="margin-top:20vh;font-size: 3vw;">Lews&nbsp;by&nbsp;Website&nbsp;Server!</div>
+</body>
+</html>
