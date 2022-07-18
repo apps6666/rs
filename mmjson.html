@@ -25,8 +25,9 @@
 			 */
 			httpRequest.onreadystatechange = function () {
 				if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-				var channel = httpRequest.responseText;//获取到json字符串，还需解析
-		console.log(channel)
+				var txt = httpRequest.responseText;//获取到json字符串，还需解析
+		console.log(txt)
+		var channel = JSON.parse(txt)			
 		var zfc = JSON.stringify(channel.RECORDS, [ 'id', 'z2', 'z3'])
 		var obj = JSON.parse(zfc)
 		console.log(obj);
