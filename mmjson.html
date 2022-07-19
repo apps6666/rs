@@ -25,10 +25,8 @@
 			 */
 			httpRequest.onreadystatechange = function () {
 				if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-				var txt = httpRequest.responseText;//获取到json字符串，还需解析
-		//console.log(txt)
-		var channel = JSON.parse(txt)			
-		var zfc = JSON.stringify(channel.RECORDS, [ 'id', 'z2', 'z3'])
+				var channel = JSON.parse(httpRequest.responseText);//获取到json字符串，还需解析		
+		var zfc = JSON.stringify(channel.RECORDS, [ 'id', 'z2', 'z3','z5'])
 		var obj = JSON.parse(zfc)
 		//console.log(obj);
 		obj.forEach((val,index)=>{
@@ -40,7 +38,7 @@
 
 		var txt='';
 		for(var i=0;i<obj.length;i++){
-			txt=txt+'<a class="links" href="'+obj[i].z3+'">'+(i+1)+":"+obj[i].z2+ '</a>';
+			txt=txt+'<a class="links" href="'+obj[i].z3+'">'+(i+1)+":"+obj[i].z5+'-'+obj[i].z2+ '</a>';
 		//console.log(txt)
 		}
 		document.getElementById('demo').innerHTML=txt;
