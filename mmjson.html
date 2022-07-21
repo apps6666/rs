@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>星空影视</title>
+	<base target="_blank" />
+	<link rel="icon" href="image/zy.png" type="image/x-icon">
+	<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+	body{overflow-y:scroll;background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F23%2F92%2FkSL8loAeSq.jpg&amp;refer=http%3A%2F%2Fpic.616pic.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1650002525&amp;t=3cb3e3ff12943d76c5c156e399bed652) fixed no-repeat;background-size: 100% 100%;}
+	.catalogue3{width: 100%;float: left;}
+	.menu{float: left;text-align: left;background: linear-gradient(to bottom,#F2EAD4,#A68B20);font-weight: bold;padding: 5px 5px;margin: 5px 5px;border-radius: 10px;width: 46%;height: 30px;}
+	.links{float: left;text-decoration: aqua;text-overflow: ellipsis;overflow: hidden;white-space:nowrap;height: 25px;background: linear-gradient(to bottom,#F4F4E4,#E1CD96);color: black;font-weight: bold;padding-top: 10px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px;margin: 5px -5px;border-radius: 10px;font-size: 12px;width: 100%;}
+	.catalogue4{float: left;font-size:2vw;text-align: center;font-family:arial;width:100%;}
+	</style>
+</head>
+<body onload="renderList()">
+	<div class="catalogue3"  id="demo"></div>
+<script>
+const getList = () => {
+  return new Promise((resolve, reject) => {
+
+    var ajax = new XMLHttpRequest();
+    ajax.open('get', './js/m3u.json');
+    ajax.send();
+    ajax.onreadystatechange = function () {
+      if (ajax.readyState == 4 && ajax.status == 200) {
+	var channel = JSON.parse(ajax.responseText);//获取到json字符串，还需解析		
+	var zfc = JSON.stringify(channel.RECORDS, ['z2', 'z3','z5'])
+	var obj = JSON.parse(zfc)
+        resolve(obj)
+      }
+    }
+  })
+}
+const container = document.getElementById('demo')
+
+	const renderList = async () => {
+	console.time('渲染耗时')
+    const list = await getList()
+	//console.log(list)
+    const total = list.length
+	//console.log(total)
+    const page = 0
+    const limit = 100
+    const totalPage = Math.ceil(total / limit)
+
+    const render = (page) => {
+        if (page >= totalPage) return
+        setTimeout(() => {
+            for (let i = page * limit; i < page * limit + limit; i++) {
+                const item = list[i]
+                const a = document.createElement('a')
+                a.className = 'links'
+				a.href ='http://www.wbdy.tv/js/player/?url='+item["z3"]
+                a.innerHTML = (i+1)+":"+item.z5+'-'+item.z2
+                container.appendChild(a)
+            }
+            render(page + 1)
+        }, 0)
+    }
+    render(page)
+		console.timeEnd('渲染耗时')
+}
+	</script>
+	<div class="catalogue4" style="margin-top:20vh;font-size: 3vw;">Lews&nbsp;by&nbsp;Website&nbsp;Server!</div>
+</body>
+</html>
