@@ -18,6 +18,7 @@
 	<div class="catalogue3"  id="demo"></div>
 <script>
 	function hqchannel() {
+		console.time('渲染耗时')
 		var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
 			httpRequest.open('GET','./js/m3u.json' , true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
 			httpRequest.send();//第三步：发送请求  将请求参数写在URL中
@@ -41,6 +42,7 @@
 		for(var i=0;i<obj.length;i++){
 			txt=txt+'<a class="links" href="'+obj[i].z3+'">'+(i+1)+":"+obj[i].z5+'-'+obj[i].z2+ '</a>';
 		//console.log(txt)
+		console.timeEnd('渲染耗时')
 		}
 		document.getElementById('demo').innerHTML=txt;
 	}
