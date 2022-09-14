@@ -54,10 +54,12 @@ document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"
 				for(var i=0;i<obj.length;i++){
 					txt=txt+'<button class="menu" onclick="clicked('+obj[i].id+')">'+obj[i].id+':&nbsp;&nbsp;'+obj[i].name+ '&nbsp;-&nbsp;'+obj[i].total+ '</button>';
 				//console.log(txt)
-		console.timeEnd('渲染耗时')
+
 	}
 		document.getElementById('demo').innerHTML=txt;
-	}}}
+	}}
+		console.timeEnd('渲染耗时')
+	}
 
 	function hqdata() {
 	 var url=document.getElementById('kw').value;
