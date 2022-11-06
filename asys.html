@@ -40,6 +40,7 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         var bind = function (element, event, callback) {
             return element.addEventListener(event, callback);
         }
+	var jk=true;
         var auto = true;
         var player = get('player');
         var randomm = function () {
@@ -56,8 +57,8 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
             this.innerText =  (auto ? '开' : '关');
         });
 	bind(get('jiekou'), 'click', function () {
-        auto = !auto;
-        this.innerText =  (auto ? '一' : '二');
+        jk = !jk;
+        this.innerText =  (jk ? '一' : '二');
         });
         bind(player, 'ended', function () {
             if (auto) randomm();
