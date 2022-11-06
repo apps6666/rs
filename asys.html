@@ -57,7 +57,6 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
             this.innerText =  (auto ? '开' : '关');
         });
 	bind(get('jiekou'), 'click', function () {
-        jk = !jk;
         this.innerText =  (jk ? '一' : '二');
         });
         bind(player, 'ended', function () {
