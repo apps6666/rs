@@ -15,7 +15,7 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
 #main{height:calc(100vh - 5px);display:flex;justify-content:center;align-items:center}
 #player{width:100%;height:auto;max-height:100%}
 #buttons{top: 20vh;right: 2px;position: fixed;}
-#switch,#next{background-color: Transparent;background-repeat: no-repeat;cursor: pointer;overflow: hidden;color: #ffd700;margin: 5px 0px;padding: 50px 15px;font-size: 3vh;}
+#jiekou,#switch,#next{background-color: Transparent;background-repeat: no-repeat;cursor: pointer;overflow: hidden;color: #ffd700;margin: 5px 0px;padding: 50px 15px;font-size: 3vh;}
 </style>
 </head>
 <body>
@@ -23,6 +23,8 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         <video id="player" src="https://www.asys.vip/kuaishou/video.php" controls webkit-playsinline playsinline></video>
     </section>
     <section id="buttons">
+	<button id="jiekou">一</button>
+	<br>    
         <button id="switch">开</button>
 	<br>
         <button id="next">下</button>
@@ -41,7 +43,8 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         var auto = true;
         var player = get('player');
         var randomm = function () {
-            player.src = 'https://www.asys.vip/kuaishou/video.php?_t=' + Math.random();
+	if(document.getElementById('jiekou')='一'){player.src = 'https://www.asys.vip/kuaishou/video.php?_t=' + Math.random();}
+	else if(document.getElementById('jiekou')='二'){player.src = 'http://nvz.bcyle.com/999.php?_t=' + Math.random();}
             player.play();
         }
         bind(get('next'), 'click', randomm);
@@ -51,6 +54,10 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         bind(get('switch'), 'click', function () {
             auto = !auto;
             this.innerText =  (auto ? '开' : '关');
+        });
+	bind(get('jiekou'), 'click', function () {
+        auto = !auto;
+        this.innerText =  (auto ? '一' : '二');
         });
         bind(player, 'ended', function () {
             if (auto) randomm();
