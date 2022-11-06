@@ -44,8 +44,8 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         var auto = true;
         var player = get('player');
         var randomm = function () {
-	if(document.getElementById('jiekou').textContent='一'){player.src = 'https://www.asys.vip/kuaishou/video.php?_t=' + Math.random();}
-	else if(document.getElementById('jiekou').textContent='二'){player.src = 'http://nvz.bcyle.com/999.php?_t=' + Math.random();}
+	if(jk=true){player.src = 'https://www.asys.vip/kuaishou/video.php?_t=' + Math.random();}
+	else if(jk=false){player.src = 'http://nvz.bcyle.com/999.php?_t=' + Math.random();}
             player.play();
         }
         bind(get('next'), 'click', randomm);
@@ -57,6 +57,7 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
             this.innerText =  (auto ? '开' : '关');
         });
 	bind(get('jiekou'), 'click', function () {
+	jk = !jk;
         this.innerText =  (jk ? '一' : '二');
         });
         bind(player, 'ended', function () {
