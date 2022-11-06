@@ -46,6 +46,7 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         var randomm = function () {
 	if(jk=true){player.src = 'https://www.asys.vip/kuaishou/video.php?_t=' + Math.random();}
 	else if(jk=false){player.src = 'http://nvz.bcyle.com/999.php?_t=' + Math.random();}
+	else {}
             player.play();
         }
         bind(get('next'), 'click', randomm);
