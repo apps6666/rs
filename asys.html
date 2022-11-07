@@ -53,14 +53,14 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         bind(get('next'), 'click', randomm);
 	bind(get('jiekou'), 'click', randomm2);
         bind(player, 'error', function () {
-            randomm();
+            randomm2();
         });
         bind(get('switch'), 'click', function () {
             auto = !auto;
             this.innerText =  (auto ? '开' : '关');
         });
         bind(player, 'ended', function () {
-            if (auto) randomm();
+            if (auto) randomm2();
         });
     })(window, document);
     </script>
