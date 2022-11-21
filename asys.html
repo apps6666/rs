@@ -8,7 +8,7 @@
     <meta name="referrer" content="never">
     <meta name="renderer" content="webkit" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>快手小姐姐在线播放</title>
+    <title>吾阅</title>
     <style>
 *{border:0;margin:0;padding:0;outline:none;box-sizing:border-box}
 body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center}
@@ -53,14 +53,14 @@ body{background:#000;width:100vw;height:100vh;overflow:hidden;display:flex;flex-
         bind(get('next'), 'click', randomm);
 	bind(get('jiekou'), 'click', randomm2);
         bind(player, 'error', function () {
-            randomm2();
+            randomm();
         });
         bind(get('switch'), 'click', function () {
             auto = !auto;
             this.innerText =  (auto ? '开' : '关');
         });
         bind(player, 'ended', function () {
-            if (auto) randomm2();
+            if (auto) randomm();
         });
     })(window, document);
     </script>
