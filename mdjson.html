@@ -75,7 +75,7 @@ document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"
 		var zfc = JSON.stringify(obj.data,['title','video_url']); //由JSON对象转换为JSON字符串
 		var newd=JSON.parse(zfc);//由JSON字符串转换为JSON对象
 			newd.forEach((val,index)=>{
-				val["video_url"]='http://www.wbdy.tv/js/player/?url='+val["video_url"];// 修改 把video_url修改
+				val["video_url"]='http://www.wbdyba.com/js/player/?url='+val["video_url"];// 修改 把video_url修改
 				//val["LimitAccount"]=188.0;//增加
 				// delete val["CustName"];// 删除
 			})
