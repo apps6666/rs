@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>麻豆乐视</title>
+    <title>己阅</title>
 	<base target="_blank" />
 	<link rel="icon" href="image/zy.png" type="image/x-icon">
 	<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,7 +19,8 @@
 </head>
 <body>
 	<div class="catalogue1">
-		<input id="kw" value="" maxlength="255"  style="width: 90%;">
+		<select id="xzk" onchange="xzksj()" style="width:50px;"><option value="08">08</option><option selected="selected" value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option></select>
+		<input id="kw" value="" maxlength="255"  style="width: 80%;">
 		<br>
 		<button class="anniu" onclick="hqchannel()">获取频道</button>
 		<button class="anniu" onclick="hqdata()">获取数据</button>
@@ -89,14 +90,23 @@ document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"
 		}};}
 
 	function clicked(channel) {
+		//点击频道
+		EditPro(7,channel);
+		hqdata();
+	}
+	function xzksj(){
+		//获取被选中的下拉框标签
+		EditPro(4,document.getElementById('xzk').value);
+	}
+	function EditPro(num,vals){
+		//编辑属性模块
 		var s,ss;
 		var s=document.getElementById('kw').value;
 		ss=s.split("_");
-		ss[7]=channel;
+		ss[num]=vals;
 		s=ss.join("_");
 		//console.log(s,ss);
-			document.getElementById('kw').value=s;
-			hqdata();
+		document.getElementById('kw').value=s;
 	}
 	</script>
 	<div class="catalogue4" style="margin-top:20vh;font-size: 3vw;">Lews&nbsp;by&nbsp;Website&nbsp;Server!</div>
