@@ -19,6 +19,7 @@
 </head>
 <body>
 	<div class="catalogue1">
+		<select id="bfqjk" style="width:50px;"><option value="http://www.wbdyba.com/js/player/?url=">wbdyba接口</option><option selected="selected" value="https://www.playm3u8.cn/jiexi.php?url=">playm3u8接口</option></select>
 		<select id="xzk" onchange="xzksj()" style="width:50px;"><option value="08">08</option><option selected="selected" value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option></select>
 		<input id="kw" value="" maxlength="255"  style="width: 80%;">
 		<br>
@@ -76,7 +77,7 @@ document.getElementById('kw').value="https://jsonmdtv.md29.tv/upload_json_live/"
 		var zfc = JSON.stringify(obj.data,['title','video_url']); //由JSON对象转换为JSON字符串
 		var newd=JSON.parse(zfc);//由JSON字符串转换为JSON对象
 			newd.forEach((val,index)=>{
-				val["video_url"]='http://www.wbdyba.com/js/player/?url='+val["video_url"];// 修改 把video_url修改
+				val["video_url"]=document.getElementById('bfqjk').value +val["video_url"];// 修改 把video_url修改
 				//val["LimitAccount"]=188.0;//增加
 				// delete val["CustName"];// 删除
 			})
