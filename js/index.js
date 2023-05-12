@@ -1,1 +1,1 @@
-var a='<a href="https://5206eiha.com">旧快猫短视频</a><a href="https://xkm6aak.com">新快猫短视频</a><a href="https://cl4628.com/">草榴社区</a><a href="./asys.html">随机小姐姐</a><a href="./mdjson.html">麻豆影视</a>';document.getElementById('a').innerHTML=a;
+var a='<a href="https://5206eiha.com">旧快猫短视频</a><a href="https://xkm6aak.com">新快猫短视频</a><a href="https://g1wj66sh7.com">AllTV</a><a href="https://2aqo08l64.com">MaDouTV</a><a href="https://cl4628.com/">草榴社区</a><a href="./asys.html">随机小姐姐</a><a href="./mdjson.html">麻豆影视</a>';document.getElementById('a').innerHTML=a;
