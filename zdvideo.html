@@ -20,7 +20,7 @@
 <body>
 	<div class="catalogue1">
 		<select id="bfqjk" style="width:50px;"><option value="https://www.41478.net/?url=">41478.net</option><option value="https://jx.yparse.com/index.php?url=">B站4</option><option selected="selected" value="https://vip.bljiex.com/?v=">bl解析</option><option value="https://www.ckmov.vip/api.php?url=">ckmov</option><option value="https://www.h8jx.com/jiexi.php?url=">H8</option><option value="https://jx.m3u8.tv/jiexi/?url=">m3u8</option><option value="https://jiexi.janan.net/jiexi/?url=">m3u8tv</option><option value="https://www.ckmov.com/?url=">诺诺</option><option value="https://www.nxflv.com/?url=">诺讯</option><option value="https://okjx.cc/?url=">OK</option><option value="https://jx.ivito.cn/?url=">维多</option><option value="https://www.1717yun.com/jx/ty.php?url=">17云</option><option value="https://jx.000180.top/jx/?url=">180</option><option value="https://jx.973973.xyz/?url=">973</option><option value="https://www.8090g.cn/?url=">8090</option><option value="https://www.playm3u8.cn/jiexi.php?url=">playm3u8接口</option><option value="http://www.wbdyba.com/js/player/?url=">wbdyba接口</option></select>
-		<select id="xzk" onchange="xzksj()" style="width:50px;"><option value="avjs1.json">AV解说</option><option selected="selected" value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option></select>
+		<select id="xzk" onchange="xzksj()" style="width:50px;"><option selected="selected" value="avjs.json">AV解说</option><option value="tzxs.json">兔子先生</option><option value="12">12</option><option value="14">14</option><option value="16">16</option></select>
 		<input id="kw" value="" maxlength="255"  style="width: 80%;">
 		<br>
 		<button class="anniu" onclick="hqdata()">获取数据</button>
@@ -33,7 +33,7 @@ function dateFormat(fmt, date) { let ret;const opt = { "Y+": date.getFullYear().
     for (let k in opt) {  ret = new RegExp("(" + k + ")").exec(fmt);   if (ret) {    fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))   };   };  return fmt;}
 var time=dateFormat("YYYYmmdd", new Date());
 //console.log(time)
-document.getElementById('kw').value="https://apps6666.github.io/rs/json/avjs1.json";  //原网站：https://g1wj66sh7.com
+document.getElementById('kw').value="https://apps6666.github.io/rs/json/avjs.json";  //原网站：https://g1wj66sh7.com
 </script>
 	<div class="catalogue2"></div>
 	<div class="catalogue3"  id="demo"></div>
